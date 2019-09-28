@@ -1,0 +1,27 @@
+<project name="antproject" default="package" basedir=".">
+
+<target name="init">
+
+<mkdir dir="web"/>
+
+</target>
+
+<target name="compile" depends="init">
+
+<javac srcdir="src" destdir="web"/>
+
+</target>
+
+<target name="lib" depends="compile">
+
+<mkdir dir="web/lib"/>
+
+</target>
+
+<target name="package" depends="lib">
+
+<jar basedir="src" destfile="web/lib/antproject.jar"/>
+
+</target>
+
+</project>
